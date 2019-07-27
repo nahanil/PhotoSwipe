@@ -1,4 +1,4 @@
-/*! PhotoSwipe - v4.1.3 - 2019-01-08
+/*! PhotoSwipe - v4.1.3 - 2019-07-28
 * http://photoswipe.com
 * Copyright (c) 2019 Dmitry Semenov; */
 (function (root, factory) { 
@@ -1639,6 +1639,9 @@ var _gestureStartTime,
 
 	// Pointerdown/touchstart/mousedown handler
 	_onDragStart = function(e) {
+		if (e && e.which !== 1) {
+			return
+		}
 
 		// Allow dragging only via left mouse button.
 		// As this handler is not added in IE8 - we ignore e.which

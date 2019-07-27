@@ -43,6 +43,9 @@ module.exports = function(grunt) {
     },
     
     sass: {                            
+      options: {
+        implementation: require('node-sass')  
+      },
       dist: {                      
         files: {      
           'dist/photoswipe.css': 'src/css/main.scss',

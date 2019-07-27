@@ -293,6 +293,9 @@ var _gestureStartTime,
 
 	// Pointerdown/touchstart/mousedown handler
 	_onDragStart = function(e) {
+		if (e && e.which !== 1) {
+			return
+		}
 
 		// Allow dragging only via left mouse button.
 		// As this handler is not added in IE8 - we ignore e.which
